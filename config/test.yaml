@@ -1,0 +1,22 @@
+seed: 7
+model:
+  name: fadv_sr
+  args:
+    in_channels: 3
+    num_frames: 7
+    dim: 64
+    scale: 4
+    heads: 4
+    window_size: 8
+
+test_dataset:
+  name: video-folder
+  args:
+    lq_root: /path/to/test/lq
+    gt_root: /path/to/test/gt
+
+inference:
+  tile_size: 128
+  tile_overlap: 16
+output_dir: results/fadv_sr
+

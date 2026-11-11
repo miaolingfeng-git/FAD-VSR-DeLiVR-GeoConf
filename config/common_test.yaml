@@ -1,0 +1,19 @@
+seed: 7
+model:
+  name: fadv_sr_geoconf
+  args:
+    in_channels: 3
+    num_frames: 7
+    dim: 64
+    scale: 4
+    heads: 4
+    window_size: 8
+test_dataset:
+  name: video-folder
+  args:
+    lq_root: /mnt/data/MLF/datasets/common_vsr_models/fad/test/lq
+    gt_root: /mnt/data/MLF/datasets/common_vsr_models/fad/test/gt
+inference:
+  tile_size: 128
+  tile_overlap: 16
+output_dir: /mnt/data/MLF/experiments/common_vsr_runs_50/fad_geoconf/results

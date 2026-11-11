@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.tmp
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Experiment outputs and model checkpoints
+experiments/*
+!experiments/.gitkeep
+results/
+runs/
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+
+# Local datasets and generated media
+dataset/
+datasets_data/
+data/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.webp
+
+# Logs and caches
+*.log
+.tensorboard/
+wandb/
+.cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Environment and local configuration
+.env
+.env.*
+!.env.example

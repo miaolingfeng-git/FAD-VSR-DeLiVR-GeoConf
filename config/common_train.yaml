@@ -1,0 +1,49 @@
+seed: 7
+epochs: 2
+batch_size: 2
+num_workers: 0
+amp: true
+save_dir: /mnt/data/common_vsr_runs/fad
+model:
+  name: fadv_sr
+  args:
+    in_channels: 3
+    num_frames: 7
+    dim: 64
+    scale: 4
+    heads: 4
+    window_size: 8
+train_dataset:
+  name: paired-video
+  args:
+    lq_root: /mnt/data/common_vsr_models/fad/train/lq
+    gt_root: /mnt/data/common_vsr_models/fad/train/gt
+    num_frames: 7
+    scale: 4
+    patch_size: 64
+    train: true
+    samples_per_video: 20
+    augment: true
+val_dataset:
+  name: paired-video
+  args:
+    lq_root: /mnt/data/common_vsr_models/fad/val/lq
+    gt_root: /mnt/data/common_vsr_models/fad/val/gt
+    num_frames: 7
+    scale: 4
+    patch_size: 64
+    train: false
+    samples_per_video: 1
+    augment: false
+optimizer:
+  lr: 0.0002
+  weight_decay: 0.0001
+scheduler:
+  milestones: [1]
+  gamma: 0.5
+loss:
+  pixel: 1.0
+  wavelet: 0.05
+  edge: 0.02
+  lpips: 0.0
+  grad_clip: 1.0
